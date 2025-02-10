@@ -1,0 +1,199 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #00ADB5, #393E46); /* Gradient using provided colors */
+  color: #222831;
+  line-height: 1.6;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(135deg, #00ADB5, #222831); /* Gradient for navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #EEEEEE;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Main Sections */
+.home-section, .upload-section {
+  margin-top: 80px;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Video List */
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Each Video Container */
+.video-item {
+  background: #EEEEEE;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 45%;
+  min-width: 350px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222831;
+}
+
+/* Video Player */
+.video-player {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.video-player:hover {
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.edit-btn, .delete-btn {
+  background: linear-gradient(135deg, #00ADB5, #00ADB5); /* Gradient button */
+  color: #EEEEEE;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.upload-btn {
+  background-color: #68ef0e;
+  margin-top: 20px;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #00ADB5, #00ADB5); /* Gradient for delete button */
+  margin-left: 20px;
+}
+
+.edit-btn:hover, .delete-btn:hover, .upload-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* Upload Form */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-title, .input-video {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.edit-title, .edit-video {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.input-title:focus, .input-video:focus {
+  border: 1px solid #00ADB5;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 173, 181, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-section, .upload-section {
+    padding: 15px;
+  }
+
+  .navbar-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  /* Stack videos vertically on smaller screens */
+  .video-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-item {
+    width: 100%;
+  }
+
+  .video-player {
+    height: 180px;
+  }
+}
