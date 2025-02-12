@@ -31,7 +31,7 @@ const Home = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/videos');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/videos`);
       setVideos(response.data);
     } catch (error) {
       console.log('Error fetching videos:', error);
@@ -59,7 +59,7 @@ const Home = () => {
     }
 
     try {
-      const response = await axios.put(`http://localhost:5000/videos/${editingVideoId}`, formData, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/videos/${editingVideoId}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -77,7 +77,7 @@ const Home = () => {
     if (!window.confirm("Are you sure you want to delete this video?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/videos/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/videos/${id}`);
       setVideos(videos.filter(video => video._id !== id));
     } catch (error) {
       console.log('Error deleting video:', error);
@@ -139,7 +139,7 @@ const UploadVideo = () => {
     formData.append('video', videoFile);
 
     try {
-      await axios.post('http://localhost:5000/upload', formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/upload1`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('Video uploaded successfully');
