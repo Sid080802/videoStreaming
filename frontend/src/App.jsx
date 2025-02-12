@@ -139,7 +139,7 @@ const UploadVideo = () => {
     formData.append('video', videoFile);
 
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/upload1`, formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/upload`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('Video uploaded successfully');
