@@ -7,7 +7,7 @@ const streamifier = require('streamifier');
 const cors = require('cors'); // Import cors
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT;
 
 // Enable CORS
 app.use(cors());
